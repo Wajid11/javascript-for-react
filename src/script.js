@@ -204,4 +204,21 @@ arr
 const sortedbookbypages = Books.slice().sort((a,b)=>b.pages - a.pages)
 sortedbookbypages
 
-console.log('feature1')
+
+// adding new book//
+const newBook = {
+  id: 1,
+  title:'mytitle',
+  author:'wajid'
+}
+
+const afteraddnewbook = [...Books, newBook]
+// afteraddnewbook
+
+// deleting book/
+const afterdeletebook = afteraddnewbook.filter(book=>book.id !== 3)
+// afterdeletebook
+
+// updating arr//
+const afterupdatebook = afterdeletebook.map(book=>book.id===1 ? {...book,pages:22} : book)
+afterupdatebook
